@@ -10,10 +10,10 @@ async function seed() {
     await mongoose.connection.db.dropCollection('products').catch(() => {});
 
     const testProduct = {
-      name: "1987 MK3 Supra Turbo",
-      description: "Classic sports car with a 7M-GTE engine.",
+      name: "Kings crown",
+      description: "Classic crown of an old king.",
       price: 25000,
-      category: "Automotive",
+      category: "Jewlery",
       stock: 1
     };
 
