@@ -2,16 +2,18 @@ import { Form, useLoaderData, useNavigation } from "react-router";
 import { Product } from "../models/Product";
 import { connectDB } from "../lib/db.server";
 import type { Route } from "./+types/test-db";
+import { redirect } from "react-router";
 
-export async function loader() {
+export async function loader({ request }: Route.LoaderArgs) {
   await connectDB();
-  const rawProducts = await Product.find().lean();
-  
-  const products = rawProducts.map((p: any) => ({
-    ...p,
-    _id: p._id.toString(),
-  }));
 
+  const cookie = request.headers.get("Cookie");
+  if (!cookie || !cookie.includes("user_session=")) {
+    return redirect("/login");
+  }
+
+  const rawProducts = await Product.find().lean();
+  const products = rawProducts.map((p: any) => ({ ...p, _id: p._id.toString() }));
   return { products };
 }
 
