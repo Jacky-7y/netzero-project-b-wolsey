@@ -22,8 +22,13 @@ Create a `.env` file in the root directory and add the following:
 `MONGO_URI`= (Your MongoDB Connection String)
 
 ## SERVER CONFIGURATION
-PORT= (Your port) default: 3000
-NODE_ENV=(Your env) development for testing or production for deployment
+PORT= (Your port) default: 3000.
+NODE_ENV=(Your env) development for testing or production for deployment.
+
+## Products
+Products are added using the inventory management system. Images are added to the public/images folder.
+images are defined as just the file name when creating a new product Ex. item1.jpg in the image filename box would display public/images/item1.jpg.
+The rest of product creation and management is self explanitory
 
 ## Note
 This project includes a built-in seeder. Upon first connection to a fresh database, a default admin account will be created. The login information will be supplied in the terminal, please read it and then change the credentials in the User table before deploying to production.
