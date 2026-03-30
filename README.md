@@ -21,7 +21,7 @@ A full-stack web application designed for an antique shop. It features a public-
 Create a `.env` file in the root directory and add the following:
 `MONGO_URI`= (Your MongoDB Connection String)
 
-# SERVER CONFIGURATION
+## SERVER CONFIGURATION
 PORT= (Your port) default: 3000
 NODE_ENV=(Your env) development for testing or production for deployment
 
