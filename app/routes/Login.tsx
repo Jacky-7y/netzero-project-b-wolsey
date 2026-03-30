@@ -1,7 +1,7 @@
 import { Form, redirect, useActionData } from "react-router";
 import { User } from "../models/User";
 import { connectDB } from "../lib/db.server";
-import type { Route } from "./+types/login";
+import type { Route } from "./+types/Login";
 
 export async function action({ request }: Route.ActionArgs) {
   await connectDB();
@@ -17,7 +17,7 @@ export async function action({ request }: Route.ActionArgs) {
   }
 
   
-  return redirect("/test-db", {
+  return redirect("/admin", {
     headers: {
       "Set-Cookie": `user_session=${user._id}; Path=/; HttpOnly; Max-Age=3600`,
     },
